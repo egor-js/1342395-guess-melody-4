@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`welcome-screen snapshot test welcome screen 1`] = `
+exports[`app app test 1`] = `
 <section
   className="welcome"
 >
@@ -41,7 +41,6 @@ exports[`welcome-screen snapshot test welcome screen 1`] = `
     </li>
     <li>
       Можно допустить 
-      5
        ошибки.
     </li>
   </ul>

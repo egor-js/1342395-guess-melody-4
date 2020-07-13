@@ -1,9 +1,9 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./components/app/app.jsx";
+import App from "./app";
 
 const settings = {
-  errorsCount: 5,
+  errors: 5,
 };
 
 describe(`app`, () => {
@@ -11,7 +11,7 @@ describe(`app`, () => {
     const tree = renderer
       .create(
           <App
-            errors = {settings.errorsCount}
+            errors = {settings.errors}
           />)
       .toJSON();
     expect(tree).toMatchSnapshot();

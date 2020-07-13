@@ -7,7 +7,7 @@ const settings = {
 };
 
 describe(`welcome-screen`, () => {
-  it(`welcome screen test`, () => {
+  it(`snapshot test welcome screen`, () => {
     const tree = renderer
       .create(
           <WelcomeScreen
