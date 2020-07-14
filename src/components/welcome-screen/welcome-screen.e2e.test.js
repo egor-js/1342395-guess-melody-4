@@ -13,7 +13,7 @@ describe(`e2e welcome-screen`, () => {
 
     const welcomeScreen = shallow(
         <WelcomeScreen
-          errors={3}
+          errors={4}
           onWelcomeButtonClick = {onWelcomeButtonClick}
         />
     );
