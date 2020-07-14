@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`welcome-screen snapshot test welcome screen 1`] = `
+exports[`Component welcome-screen snapshot test welcome screen 1`] = `
 <section
   className="welcome"
 >
@@ -16,6 +16,7 @@ exports[`welcome-screen snapshot test welcome screen 1`] = `
   </div>
   <button
     className="welcome__button"
+    onClick={[Function]}
   >
     <span
       className="visually-hidden"
@@ -41,7 +42,7 @@ exports[`welcome-screen snapshot test welcome screen 1`] = `
     </li>
     <li>
       Можно допустить 
-      5
+      4
        ошибки.
     </li>
   </ul>

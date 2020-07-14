@@ -2,16 +2,16 @@ import React from "react";
 import renderer from "react-test-renderer";
 import WelcomeScreen from "./welcome-screen";
 
-const settings = {
-  errorsCount: 5,
-};
+const errorsCount = 4;
+const onWelcomeButtonClick = function () {};
 
-describe(`welcome-screen`, () => {
+describe(`Component welcome-screen`, () => {
   it(`snapshot test welcome screen`, () => {
     const tree = renderer
       .create(
           <WelcomeScreen
-            errors = {settings.errorsCount}
+            errors = {errorsCount}
+            onWelcomeButtonClick = {onWelcomeButtonClick}
           />)
       .toJSON();
     expect(tree).toMatchSnapshot();

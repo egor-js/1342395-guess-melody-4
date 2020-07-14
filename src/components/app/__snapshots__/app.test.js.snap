@@ -16,6 +16,7 @@ exports[`app app test 1`] = `
   </div>
   <button
     className="welcome__button"
+    onClick={[Function]}
   >
     <span
       className="visually-hidden"
@@ -41,6 +42,7 @@ exports[`app app test 1`] = `
     </li>
     <li>
       Можно допустить 
+      4
        ошибки.
     </li>
   </ul>
