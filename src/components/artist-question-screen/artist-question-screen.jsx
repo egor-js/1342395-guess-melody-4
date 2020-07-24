@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {GameType} from "../../const.js";
 
 const ArtistQuestionScreen = (props) => {
+    console.log(props);
   const {onAnswer, question} = props;
   const {
     answers,

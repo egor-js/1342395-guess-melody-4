@@ -4,6 +4,7 @@ import {GameType} from "../../const.js";
 
 class GenreQuestionScreen extends PureComponent {
   constructor(props) {
+    console.log(props);
     super(props);
 
     this.state = {
