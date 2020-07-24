@@ -8,7 +8,6 @@ import {GameType} from "../../const.js";
 
 class App extends PureComponent {
   constructor(props) {
-    console.log(props);
     super(props);
 
     this.state = {

@@ -8,7 +8,6 @@ const settings = {
   questions,
   onWelcomeButtonClick() {},
 };
-console.log(settings);
 
 ReactDOM.render(
     <App
