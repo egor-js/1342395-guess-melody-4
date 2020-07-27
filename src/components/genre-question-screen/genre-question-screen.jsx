@@ -11,14 +11,10 @@ class GenreQuestionScreen extends PureComponent {
     };
   }
 
-
   render() {
     const {onAnswer, question} = this.props;
     const {answers: userAnswers} = this.state;
-    const {
-      answers,
-      genre,
-    } = question;
+    const {answers, genre} = question;
 
     return (
       <section className="game game--genre">

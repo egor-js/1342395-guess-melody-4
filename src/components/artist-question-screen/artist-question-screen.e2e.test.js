@@ -30,11 +30,9 @@ const mock = {
   }
 };
 
-
 const mockEvent = {
   preventDefault() {}
 };
-
 
 it(`Click on user answer should pass to the callback data-object from which this answer was created`, () => {
   const {question} = mock;
