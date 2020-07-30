@@ -42,7 +42,6 @@ exports[`app app test 1`] = `
     </li>
     <li>
       Можно допустить 
-      4
        ошибки.
     </li>
   </ul>

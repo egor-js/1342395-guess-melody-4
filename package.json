@@ -8,6 +8,7 @@
     "test": "npm run eslint && npm run test.jest",
     "build": "webpack --mode production",
     "test.jest": "jest",
+    "fix": "eslint --fix --ext .jsx --ext .js src/",
     "start": "webpack-dev-server"
   },
   "devDependencies": {

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen.jsx";
+import GameScreen from "../game-screen/game-screen.jsx";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen.jsx";
 import {GameType} from "../../const.js";
 
@@ -14,54 +15,6 @@ class App extends PureComponent {
       step: -1,
     };
   }
-
-  _renderGameScreen() {
-    const {errors, questions} = this.props;
-    const {step} = this.state;
-    const question = questions[step];
-
-    if (step === -1 || step >= questions.length) {
-      return (
-        <WelcomeScreen
-          errorsCount={errors}
-          onWelcomeButtonClick={() => {
-            this.setState({
-              step: 0,
-            });
-          }}
-        />
-      );
-    }
-
-    if (question) {
-      switch (question.type) {
-        case GameType.ARTIST:
-          return (
-            <ArtistQuestionScreen
-              question={question}
-              onAnswer={() => {
-                this.setState((prevState) => ({
-                  step: prevState.step + 1,
-                }));
-              }}
-            />
-          );
-        case GameType.GENRE:
-          return (
-            <GenreQuestionScreen
-              question={question}
-              onAnswer={() => {
-                this.setState((prevState) => ({
-                  step: prevState.step + 1,
-                }));
-              }}
-            />
-          );
-      }
-    }
-    return null;
-  }
-
   render() {
     const {questions} = this.props;
     return (
@@ -87,12 +40,61 @@ class App extends PureComponent {
     );
   }
 
-}
+  _renderGameScreen() {
+    const {errors, questions} = this.props;
+    const {step} = this.state;
+    const question = questions[step];
 
-// return <GuessArtist
-//   errors = {errors}
-//   onWelcomeButtonClick = {onWelcomeButtonClick}
-// />;
+    if (step === -1 || step >= questions.length) {
+      return (
+        <WelcomeScreen
+          errorsCount={errors}
+          onWelcomeButtonClick={() => {
+            this.setState({
+              step: 0,
+            });
+          }}
+        />
+      );
+    }
+
+    if (question) {
+      switch (question.type) {
+        case GameType.ARTIST:
+          return (
+            <GameScreen
+              type={question.type}
+            >
+              <ArtistQuestionScreen
+                question={question}
+                onAnswer={() => {
+                  this.setState((prevState) => ({
+                    step: prevState.step + 1,
+                  }));
+                }}
+              />
+            </GameScreen>
+          );
+        case GameType.GENRE:
+          return (
+            <GameScreen
+              type={question.type}
+            >
+              <GenreQuestionScreen
+                question={question}
+                onAnswer={() => {
+                  this.setState((prevState) => ({
+                    step: prevState.step + 1,
+                  }));
+                }}
+              />
+            </GameScreen>
+          );
+      }
+    }
+    return null;
+  }
+}
 
 App.propTypes = {
   errors: PropTypes.number.isRequired,
