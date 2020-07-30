@@ -10,6 +10,7 @@ import {GameType} from "../../const.js";
 class App extends PureComponent {
   constructor(props) {
     super(props);
+    this.props = props;
 
     this.state = {
       step: -1,
@@ -40,6 +41,31 @@ class App extends PureComponent {
     );
   }
 
+  render() {
+    const {questions} = this.props;
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            {this._renderGameScreen()}
+          </Route>
+          <Route exact path="/artist">
+            <ArtistQuestionScreen
+              question={questions[0]}
+              onAnswer={() => {}}
+            />
+          </Route>
+          <Route exact path="/genre">
+            <GenreQuestionScreen
+              question={questions[1]}
+              onAnswer={() => {}}
+            />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+
   _renderGameScreen() {
     const {errors, questions} = this.props;
     const {step} = this.state;
@@ -48,7 +74,7 @@ class App extends PureComponent {
     if (step === -1 || step >= questions.length) {
       return (
         <WelcomeScreen
-          errorsCount={errors}
+          errors={errors}
           onWelcomeButtonClick={() => {
             this.setState({
               step: 0,
