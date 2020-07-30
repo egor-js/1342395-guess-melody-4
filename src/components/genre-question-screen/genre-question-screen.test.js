@@ -24,6 +24,7 @@ it(`GenreQuestionScreen is rendered correctly`, () => {
   const tree = renderer.create((
     <GenreQuestionScreen
       question={question}
+      renderPlayer={() => {}}
       onAnswer={() => {}}
     />
   ), {
