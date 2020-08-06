@@ -21,13 +21,13 @@ settings:
 rules: {
   sort-class-members/sort-class-members: [2, {
     order: [
-      [static-properties],
-      [static-methods],
-      [properties],
-      [conventional-private-properties],
+      ['static-properties'],
+      ['static-methods'],
+      ['properties'],
+      ['conventional-private-properties'],
       constructor,
-      [methods],
-      [conventional-private-methods]
+      ['methods'],
+      ['conventional-private-methods']
     ],
     accessorPairPositioning: getThenSet,
   }]
